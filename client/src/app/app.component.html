@@ -1,0 +1,15 @@
+<style>
+
+</style>
+
+<div>
+  <h1>Products</h1>
+  <ul>
+  @for (product of (products$ | async); track product.id) {
+      <li>{{ product.name }}</li>
+  }  
+  </ul>
+</div>
+
+
+<router-outlet />
