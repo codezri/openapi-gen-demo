@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ProductService, Product } from './modules/openapi';
 import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ProductService, Product } from './modules/openapi';
 
 @Component({
   selector: 'app-root',
@@ -18,8 +18,7 @@ export class AppComponent {
   products$!: Observable<Product[]>;
   productName!: string;
 
-  constructor(private productService: ProductService) {
-  }
+  constructor(private productService: ProductService) {}
 
   ngOnInit() {
     this.loadProducts();
@@ -31,7 +30,7 @@ export class AppComponent {
 
   deleteProduct(productId: number) {
     this.productService.deleteProduct(productId)
-      .subscribe(() => this.loadProducts())
+      .subscribe(() => this.loadProducts());
   }
 
   createProduct() {
