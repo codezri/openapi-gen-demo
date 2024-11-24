@@ -12,9 +12,7 @@ import { ProductService, Product } from './modules/openapi';
   styleUrl: './app.component.css'
 })
 
-
 export class AppComponent {
-  title = 'openapi-demo';
   products$!: Observable<Product[]>;
   productName!: string;
 
